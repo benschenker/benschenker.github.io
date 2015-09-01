@@ -45,6 +45,14 @@ footer{
     color: #337ab7;
     background: #fff;
 }
+#fcc.btn-outline:hover, #fcc.btn-outline:focus, #fcc.btn-outline:active, #fcc.btn-outline.active {
+    border: solid 2px #fff;
+    color: #337ab7;
+    background: #492c14;
+}
+#fcc img {
+  width: 2em;
+}
 #portfolio .portfolio-item {
     right: 0;
     margin: 0 0 15px;
