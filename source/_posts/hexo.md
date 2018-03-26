@@ -19,20 +19,8 @@ I may try to customize the theme or make my own because Cactus does not make it 
 
 ## Hosting
 
-One of Hexo's great features is easy deployment. I have used github pages to host my site in the past because of how simple it is to work with and Hexo makes this even easier. A tricky bit was using the [`hexo-deployer-git`](https://github.com/hexojs/hexo-deployer-git) package to deploy my fully generated static site to one branch (`master`) and the source files to another (`src`).  The below configuration worked for me (NOTE: This is slightly different than the [documentation suggests](https://github.com/hexojs/hexo-deployer-git#options) because I ran into an issue when including hidden files):
-```yaml
-deploy:
-- type: git
-  repo: git@github.com:benschenker/benschenker.github.io.git
-  branch: master
-- type: git
-  repo: git@github.com:benschenker/benschenker.github.io.git
-  branch: src
-  extend_dirs: /
-  ignore_hidden: true
-  ignore_pattern:
-      public: .
-```
+Hexo claims to make deployment really easy, but I struggled quite a bit making the github pages deployment work through the official method [`hexo-deployer-git`](https://github.com/hexojs/hexo-deployer-git). It does all sorts of "magic" with git that I was not happy with and it was way too destructive and opaque. Instead I found a [simple script](https://gist.github.com/cobyism/4730490#gistcomment-1928142) and [modified it for my use case](https://github.com/benschenker/benschenker.github.io/blob/src/deploy.sh). Now I can commit my source files to the `src` branch and keep a versioned history there, and then run the `deploy.sh` script to generate the static files and push them to the master branch for deployment.
+
 
 ## Conclusion
 
