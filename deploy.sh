@@ -1,4 +1,5 @@
 #!/bin/bash
+# borrowed from https://gist.github.com/cobyism/4730490#gistcomment-1928142
 set -e # stop on error
 
 echo bulid client ...
